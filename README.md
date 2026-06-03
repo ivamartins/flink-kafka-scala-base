@@ -79,6 +79,26 @@ sbt run
 
 Use `kafka-console-producer` (from Kafka container or local) to send events.
 
+## Running the tests
+
+**Português:**
+
+```bash
+sbt test
+```
+
+Testes unitários básicos (ScalaTest) cobrem a lógica de enriquecimento extraída (`enrichEvent`). Não precisam de Kafka, Zookeeper ou Flink rodando — são unitários puros e rápidos.
+
+**English:**
+
+```bash
+sbt test
+```
+
+Basic unit tests (ScalaTest) cover the extracted enrichment logic (`enrichEvent`). They do not require Kafka, Zookeeper or a running Flink cluster — pure and fast unit tests.
+
+For full streaming demo with real topics you still need the docker-compose environment.
+
 ## Extending This Base (Portfolio / Real Projects)
 
 This project is designed as a **starting template** you can fork and evolve:
