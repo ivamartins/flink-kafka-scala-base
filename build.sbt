@@ -6,9 +6,11 @@ val flinkVersion = "1.18.1"
 
 libraryDependencies ++= Seq(
   "org.apache.flink" %% "flink-streaming-scala" % flinkVersion % "provided",
-  "org.apache.flink" %% "flink-connector-kafka" % flinkVersion,
   "org.apache.flink" % "flink-clients" % flinkVersion % "provided",
-  "org.apache.flink" %% "flink-test-utils" % flinkVersion % "test"
+  // Test
+  "org.scalatest" %% "scalatest" % "3.2.17" % Test
+  // Add for full Kafka example:
+  // "org.apache.flink" % "flink-connector-kafka" % flinkVersion
 )
 
 // For fat JAR (Flink jobs are usually submitted as fat jars)
@@ -17,7 +19,3 @@ assembly / assemblyMergeStrategy := {
   case PathList("META-INF", xs @ _*) => MergeStrategy.discard
   case x => MergeStrategy.first
 }
-
-ThisBuild / assemblyShadeRules := Seq(
-  ShadeRule.rename("org.apache.kafka.**" -> "shaded.kafka.@1").inAll
-)

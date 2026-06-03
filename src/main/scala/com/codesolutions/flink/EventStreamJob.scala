@@ -59,12 +59,7 @@ object EventStreamJob {
     // Core processing pipeline - this is where you put legacy rules, AI calls, transformations
     val processed: DataStream[String] = stream
       .filter(_.trim.nonEmpty)
-      .map { rawEvent =>
-        // Example enrichment (in real use: parse JSON, apply business rules from legacy,
-        // call AI agent for classification, add metadata, etc.)
-        val ts = System.currentTimeMillis()
-        s"ENRICHED[$ts] from_legacy_event: $rawEvent | processed_by=flink-kafka-base | org=CodeSolutions"
-      }
+      .map(rawEvent => enrichEvent(rawEvent))
 
     // Output for demo (in prod replace with proper sink)
     processed.print()
@@ -106,5 +101,14 @@ object EventStreamJob {
     */
 
     env.execute("Flink Streaming Base - Code Solutions (Sicredi-style event platform example)")
+  }
+
+  /**
+   * Basic enrichment logic extracted for unit testing.
+   * In real use: parse, apply legacy business rules, call AI agents, etc.
+   */
+  def enrichEvent(rawEvent: String): String = {
+    val ts = System.currentTimeMillis()
+    s"ENRICHED[$ts] from_legacy_event: $rawEvent | processed_by=flink-kafka-base | org=CodeSolutions"
   }
 }
