@@ -1,5 +1,14 @@
 # flink-kafka-scala-base
 
+Base funcional mínima em Apache Flink + Kafka streaming com Scala.
+
+**Este é um exemplo de framework principal para arquiteturas orientadas a eventos e processamento de big data.**
+
+**Português (resumo):**
+Demonstra arquitetura event-driven com Scala + Flink + Kafka. Ponto de partida funcional para pipelines de processamento em tempo real, ingestão de eventos de sistemas legados, enriquecimento com agentes IA/LLMs, sinks para Elasticsearch, DBs, outros tópicos Kafka. Escalável, com suporte a exactly-once (estenda com checkpoints).
+
+**English:**
+
 Minimal, functional Apache Flink + Kafka streaming base in Scala.
 
 **This is a core framework example for event-driven architectures and big data processing.**
