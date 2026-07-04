@@ -1,5 +1,8 @@
 # flink-kafka-scala-base
 
+[![CI](https://github.com/ivamartins/flink-kafka-scala-base/actions/workflows/ci.yml/badge.svg)](https://github.com/ivamartins/flink-kafka-scala-base/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+
 > Part of the **Code Solutions Event-Driven & Streaming Toolkit** product line. Functional starting point for real-time pipelines with Apache Flink and Apache Kafka in Scala.
 
 Minimal, functional Apache Flink + Kafka streaming base in Scala. Demonstrates the event-driven architecture pattern adopted at the **Sicredi Digital** platform (PFM crawler → full event-driven stack that became the platform standard).
